@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 15:23:48 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/17 15:27:22 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/17 15:28:08 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/17 18:19:39 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str);
-char	*ft_strlcat(char *dest, char *src, unsigned int size);
+char	*ft_strstr(char *str, char *to_find);
 
-char	*ft_strlcat(char *dest, char *src, unsigned int size)
+char	*ft_strstr(char *str, char *to_find)
 {
+	int	str_len;
+	int	find_len;
 	int	i;
 	int	j;
 
+	str_len = ft_strlen(str);
+	find_len = ft_strlen(to_find);
 	i = 0;
-	j = ft_strlen(dest);
-	while (j < size - 1)
+	j = 0;
+	while (i <= str_len - find_len)
 	{
-		dest[j] = src[i];
+		while (j < find_len)
+		{
+			if (str[i + j] != to_find[j])
+				break ;
+			j++;
+		}
+		if (j == find_len)
+			return (&str[i]);
 		i++;
-		j++;
 	}
-	return (dest);
+	return (NULL);
 }
 
 int	ft_strlen(char *str)
