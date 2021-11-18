@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: faventur <faventur@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: mroth <mroth@student.42mulhouse.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 16:38:21 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/18 16:59:11 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/13 12:15:25 by mroth             #+#    #+#             */
+/*   Updated: 2021/11/14 17:12:21 by mroth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-int	ft_strlen(char	*str);
+void	rush(int x, int y);
 
-int	ft_strlen(char	*str)
+int	main(void)
 {
-	int	counter;
-
-	counter = 0;
-	while (str[counter])
-	{
-		counter++;
-	}
-	return (counter);
+	rush(10, 10);
 }

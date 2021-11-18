@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 15:23:48 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/18 17:15:19 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/18 17:00:59 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/18 17:29:16 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str);
-char	*ft_strlcat(char *dest, char *src, unsigned int size);
+#include <unistd.h>
 
-char	*ft_strlcat(char *dest, char *src, unsigned int size)
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = ft_strlen(dest);
-	while (j < size - 1)
+	while (str[i])
 	{
-		dest[j] = src[i];
+		ft_putchar(str[i]);
 		i++;
-		j++;
 	}
-	return (dest);
 }
 
-int	ft_strlen(char *str)
+void	ft_putchar(char c)
 {
-	int	counter;
-
-	counter = 0;
-	while (*str != '\0')
-	{
-		counter++;
-		str++;
-	}
-	return (counter);
+	write(1, &c, 1);
 }
