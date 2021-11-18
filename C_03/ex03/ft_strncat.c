@@ -15,7 +15,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb);
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-    int	i;
+	int	i;
 	int	j;
 
 	i = 0;
@@ -31,7 +31,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 int	ft_strlen(char *str)
 {
-	int    counter;
+	int	counter;
 
 	counter = 0;
 	while (*str != '\0')
@@ -41,4 +41,3 @@ int	ft_strlen(char *str)
 	}
 	return (counter);
 }
-
