@@ -6,7 +6,7 @@
 /*   By: mroth <mroth@student.42mulhouse.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 12:15:25 by mroth             #+#    #+#             */
-/*   Updated: 2021/11/14 17:12:21 by mroth            ###   ########.fr       */
+/*   Updated: 2021/11/19 13:46:33 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -15,5 +15,5 @@ void	rush(int x, int y);
 
 int	main(void)
 {
-	rush(2, 6);
+	rush(1, 2);
 }

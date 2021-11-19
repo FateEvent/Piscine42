@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush.c                                             :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mroth <mroth@student.42mulhouse.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 11:49:04 by mroth             #+#    #+#             */
-/*   Updated: 2021/11/14 17:15:56 by mroth            ###   ########.fr       */
+/*   Updated: 2021/11/19 13:52:21 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	print_vertically(int x, int y)
 		while (y > 2)
 		{
 			ft_putchar('*');
-            insert_space(x);  // modif
+			insert_space(x);
 			ft_putchar('*');
 			ft_putchar('\n');
 			y--;
@@ -73,10 +73,9 @@ void	print_vertically(int x, int y)
 	}
 }
 
-
 void	insert_space(int x)
 {
-	while (x > 2)  //modif
+	while (x > 2)
 	{
 		ft_putchar(' ');
 		x--;
@@ -95,5 +94,3 @@ void	print_last_line(int x)
 	if (x == 1)
 		ft_putchar('/');
 }
-
-
