@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 13:26:59 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/21 16:22:53 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/21 15:34:42 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/21 16:04:09 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str);
-char	*ft_strcat(char *dest, char *src);
+int ft_fibonacci(int index);
 
-char	*ft_strcat(char *dest, char *src)
+int ft_fibonacci(int index)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = ft_strlen(dest);
-	while (src[i] != '\0')
-	{
-		dest[j] = src[i];
-		i++;
-		j++;
-	}
-	dest[j] = '\0';
-	return (dest);
-}
-
-int	ft_strlen(char	*str)
-{
-	int	counter;
-
-	counter = 0;
-	while (*str != '\0')
-	{
-		counter++;
-		str++;
-	}
-	return (counter);
+    if (index < 0)
+        return (-1);
+    if (index == 0)
+        return (0);
+    if (index == 1)
+        return (1);
+    if (index > 1)
+        return (1 + ft_fibonacci(index - 1));
 }

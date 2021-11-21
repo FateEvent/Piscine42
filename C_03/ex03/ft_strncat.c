@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 13:53:02 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/17 13:58:29 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/21 16:22:07 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	i = 0;
 	j = ft_strlen(dest);
-	while (i < nb)
+	while (i < nb && src[i] != '\0')
 	{
 		dest[j] = src[i];
 		i++;
 		j++;
 	}
+	dest[nb] = '\0';
 	return (dest);
 }
 
