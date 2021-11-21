@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_sqrt_var.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 11:26:06 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/21 18:08:57 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/21 18:03:55 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/21 18:08:33 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb);
+double	ft_sqrt(double nb);
 
-int	ft_sqrt(int nb)
+double	ft_sqrt(double nb)
 {
-	int	i;
+	double	error;
+	double	s;
 
-	i = 0;
-	while (i < nb)
+	error = 0.00001;
+	s = nb;
+	while ((s - nb / s) > error)
 	{
-		if ((i * i) == nb)
-			return (i);
-		i++;
+		s = (s + nb / s) / 2;
 	}
-	return (0);
+	return (s);
 }
