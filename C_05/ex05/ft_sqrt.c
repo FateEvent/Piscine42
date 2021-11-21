@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 21:03:03 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/21 15:11:57 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/21 11:26:06 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/21 14:25:39 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+int ft_abs(int nb);
+int ft_sqrt(int nb);
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int ft_sqrt(int nb)
 {
-	unsigned int	i;
-	unsigned int	srclen;
+    int s = nb;
 
-	i = 0;
-	srclen = 0;
-	while (src[srclen])
-		srclen++;
-	while (i < size - 1)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[size - 1] = '\0';
-	return (srclen);
+    while ((s - nb / s) > 0) //loop until precision satisfied 
+    {
+        s = (s + nb / s) / 2;
+    }
+    return (s);
+}
+
+int ft_abs(int nb)
+{
+    if (nb < 0)
+        nb *= -1;
+    return (nb);
 }
