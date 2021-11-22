@@ -1,15 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_argument_number.c                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/22 14:06:14 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/22 17:25:27 by faventur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putnbr(int nb);
 void	ft_putchar(char c);
 
-int     main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-    (void) argc;
-    (void) argv;
-    ft_putnbr(argc);
-
-    return (0);
+	(void) argc;
+	(void) argv;
+	ft_putnbr(argc);
+	return (0);
 }
 
 void	ft_putnbr(int nb)

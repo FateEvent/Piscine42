@@ -1,31 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 12:00:00 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/22 15:34:43 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/22 14:29:02 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/22 17:22:43 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2);
+#include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_putstr(char *str);
+void	ft_putchar(char c);
+
+int	main(int argc, char *argv[])
+{
+	int	i;
+
+	i = argc;
+	(void) argc;
+	(void) argv;
+	while (i > 1)
+	{
+		ft_putstr(argv[i - 1]);
+		ft_putchar('\n');
+		i--;
+	}
+	return (0);
+}
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
+	while (str[i])
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		ft_putchar(str[i]);
 		i++;
 	}
-	if (s2[i] == '\0')
-		return (s1[i]);
-	if (s1[i] == '\0')
-		return (-s2[i]);
-	return (0);
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

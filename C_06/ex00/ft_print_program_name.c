@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:20:37 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/22 13:58:48 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:24:32 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
 
-int     main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-    (void) argc;
-    (void) argv;
-    ft_putstr(argv);
-
-    return (0);
+	(void) argc;
+	(void) argv;
+	ft_putstr(argv[0]);
+	return (0);
 }
 
 void	ft_putstr(char *str)
