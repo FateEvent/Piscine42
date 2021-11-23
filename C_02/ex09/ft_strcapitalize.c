@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:56:06 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/17 19:06:50 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:30:41 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ char	*ft_strcapitalize(char *str)
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 				str[i] += 32;
-		if (str[i - 1] < '0' || str[i - 1] > '9' && str[i - 1] < 'A')
+		if (str[i - 1] < '0' || (str[i - 1] > '9' && str[i - 1] < 'A'))
 		{
 			if (str[i] >= 'a' && str[i] <= 'z')
 				str[i] -= 32;
 		}
-		if (str[i - 1] > 'Z' && str[i - 1] < 'a' || str[i - 1] > 'z')
+		if ((str[i - 1] > 'Z' && str[i - 1] < 'a') || str[i - 1] > 'z')
 		{
 			if (str[i] >= 'a' && str[i] <= 'z')
 				str[i] -= 32;
