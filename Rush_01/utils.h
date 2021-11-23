@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lblanche <lblanche@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:44:16 by lblanche          #+#    #+#             */
-/*   Updated: 2021/11/21 11:55:00 by lblanche         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:57 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef UTILS_H
+
 # define UTILS_H
 
 void	ft_fill_full_left(int *tab, int i);

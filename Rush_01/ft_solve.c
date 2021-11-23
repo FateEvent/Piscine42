@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_solve.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:01:35 by stissera          #+#    #+#             */
-/*   Updated: 2021/11/21 23:01:47 by stissera         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:30 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "function.h"
+
 #include <unistd.h>
 
 int	pre_check(int **concat, int *tab, int SIZE, int *index_null);

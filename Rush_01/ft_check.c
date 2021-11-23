@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvanbael <tvanbael@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 10:50:03 by tvanbael          #+#    #+#             */
-/*   Updated: 2021/11/21 17:08:15 by lblanche         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:22:27 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

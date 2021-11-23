@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lblanche <lblanche@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:17:07 by lblanche          #+#    #+#             */
-/*   Updated: 2021/11/21 17:34:51 by lblanche         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:00 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 #include <unistd.h>
 
 int	*ft_init(int size_tab);

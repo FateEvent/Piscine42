@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_null_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbraquem <tbraquem@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:17:06 by tbraquem          #+#    #+#             */
-/*   Updated: 2021/11/21 22:58:06 by stissera         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:09 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

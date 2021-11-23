@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   function.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 16:25:32 by stissera          #+#    #+#             */
-/*   Updated: 2021/11/21 17:51:53 by lblanche         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:43 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FUNCTION_H
+
 # define FUNCTION_H
 
 int		ft_check_row(int null_index, int *tab, int value);

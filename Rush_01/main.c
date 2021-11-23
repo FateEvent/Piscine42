@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stissera <stissera@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 13:32:34 by stissera          #+#    #+#             */
-/*   Updated: 2021/11/21 20:33:21 by stissera         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:51 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 #include <unistd.h>
 #include "function.h"
 

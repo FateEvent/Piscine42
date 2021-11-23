@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_row.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mroth <mroth@student.42mulhouse.fr>        +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 13:18:06 by mroth             #+#    #+#             */
-/*   Updated: 2021/11/21 17:43:05 by lblanche         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:22:11 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_check_row(int null_index, int *tab, int value)
 	x = ft_where_x(null_index);
 	y = ft_where_y(null_index);
 	if (ft_check_x(tab, value, x)
-	    && ft_check_y(tab, value, y))
+		&& ft_check_y(tab, value, y))
 		return (1);
 	else
 		return (0);

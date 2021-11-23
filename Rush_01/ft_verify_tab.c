@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_verify_tab.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbraquem <tbraquem@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 10:15:37 by tbraquem          #+#    #+#             */
-/*   Updated: 2021/11/21 14:32:28 by tbraquem         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:37 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lblanche <lblanche@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:39:42 by lblanche          #+#    #+#             */
-/*   Updated: 2021/11/21 11:43:36 by lblanche         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:22:44 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_fill_full_left(int *tab, int i)
+
 {
 	int	index;
 

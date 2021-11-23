@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_fill.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lblanche <lblanche@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:25:34 by lblanche          #+#    #+#             */
-/*   Updated: 2021/11/21 17:52:20 by lblanche         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:22:53 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "function.h"
+
 
 void	ft_check_v_cons(int *tab, int *cons)
 {

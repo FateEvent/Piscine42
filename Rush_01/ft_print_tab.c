@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbrissia <tbrissia@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 13:41:40 by tbrissia          #+#    #+#             */
-/*   Updated: 2021/11/21 17:45:41 by lblanche         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:24 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+
 #include "function.h"
 
 void	ft_print_tab(int *tab, int *consigne, int size)

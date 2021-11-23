@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_tab_test.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aguemazi <aguemazi@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 20:43:44 by aguemazi          #+#    #+#             */
-/*   Updated: 2021/11/21 14:34:18 by aguemazi         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:23:17 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+
 
 void	ft_putchar(char c)
 {
