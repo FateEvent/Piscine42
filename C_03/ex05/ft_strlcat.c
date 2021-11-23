@@ -6,17 +6,17 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:23:48 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/23 19:21:36 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/23 21:00:27 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str);
-char	*ft_strlcat(char *dest, char *src, unsigned int size);
+int	ft_strlen(char *str);
+int	ft_strlcat(char *dest, char *src, unsigned int size);
 
-char	*ft_strlcat(char *dest, char *src, unsigned int size)
+int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	j;
+	int				i;
+	unsigned int	j;
 
 	i = 0;
 	j = ft_strlen(dest);
@@ -27,7 +27,7 @@ char	*ft_strlcat(char *dest, char *src, unsigned int size)
 		j++;
 	}
 	dest[j] = '\0';
-	return (dest);
+	return (j);
 }
 
 int	ft_strlen(char *str)

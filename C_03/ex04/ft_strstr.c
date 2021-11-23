@@ -6,13 +6,14 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:28:08 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/17 18:19:39 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/23 20:28:30 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 char	*ft_strstr(char *str, char *to_find);
+int		ft_strlen(char *str);
 
 char	*ft_strstr(char *str, char *to_find)
 {
