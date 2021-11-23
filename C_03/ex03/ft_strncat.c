@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 13:53:02 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/21 16:22:07 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/23 19:17:42 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		i++;
 		j++;
 	}
-	dest[nb] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
 
