@@ -6,36 +6,45 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:12:12 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/23 13:30:37 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:06:13 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+char	*ft_strdup(char *src);
+char	*ft_strcpy(char *s1, char *s2);
 int		ft_strlen(char *str);
 char	*ft_strcat(char *dest, char *src);
-char    *ft_(int size, char **strs, char *sep);
+char	*ft_strjoin(int size, char **strs, char *sep);
 
-char    *ft_(int size, char **strs, char *sep)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int	i;
-	int	*tab;
-	int	index;
+	char	*str;
+	int		sep_len;
+	int		index;
+	int		strsize;
 
-	i = min;
-	index = 0;
-	if (min >= max)
-		return (NULL);
-	tab = malloc((max - min) * sizeof(int));
-	if (tab == NULL)
-		return (NULL);
-	while (i < max)
+	str = ft_strdup(strs[0]);
+	sep_len = strlen(sep);
+	index = 1;
+	strsize = ft_strlen(str);
+	while (index < size)
 	{
-		tab[index] = i;
+		strsize += ft_strlen(strs[index]);
 		index++;
-		i++;
 	}
-	return (tab);
+	index = 1;
+	str[strsize] = (char)malloc ((strsize + (size - 1)
+				* sep_len + 1) * sizeof(char));
+	while (size > 1)
+	{
+		str = ft_strcat(str, sep);
+		str = ft_strcat(str, strs[index]);
+		size--;
+		index++;
+	}
+	return (str);
 }
 
 char	*ft_strcat(char *dest, char *src)
@@ -66,4 +75,29 @@ int	ft_strlen(char	*str)
 		str++;
 	}
 	return (counter);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*dst;
+
+	dst = malloc (ft_strlen (src) + 1);
+	if (dst == NULL)
+		return (NULL);
+	ft_strcpy(dst, src);
+	return (dst);
+}
+
+char	*ft_strcpy(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s2[i] != '\0')
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }
