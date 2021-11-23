@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 22:19:06 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/16 20:16:52 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:13:28 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strupcase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'a') && (str[i] <= 'z'))
+		if (str[i] >= 'a' && str[i] <= 'z')
 			str[i] -= 32;
 		i++;
 	}
