@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:26:06 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/21 18:08:57 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/24 20:42:32 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_sqrt(int nb)
 	int	i;
 
 	i = 0;
-	while (i < nb)
+	while (i < nb && i < 46341)
 	{
 		if ((i * i) == nb)
 			return (i);
