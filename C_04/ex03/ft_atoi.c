@@ -6,12 +6,10 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 21:45:13 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/22 17:30:04 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:49:48 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int _c);
-int	ft_abs(int nb);
 int	ft_atoi(char *str);
 
 int	ft_atoi(char *str)
@@ -23,30 +21,22 @@ int	ft_atoi(char *str)
 	i = 0;
 	res = 0;
 	minus_count = 0;
-	while (str[i] < 'a' || str[i] > 'z')
+	if (str[i] == '\0')
+		return (0);
+	while (str[i] && ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' '))
+		i++;
+	while (str[i] && ((str[i] == '+') || str[i] == '-'))
 	{
-		if (ft_isspace(str[i]) == 0 && str[i] == '-')
+		if (str[i] == '-')
 			minus_count++;
-		if (ft_isspace(str[i]) == 0 && str[i] >= '0' && str[i] <= '9')
-			res = res * 10 + str[i] - '0';
-		++i;
+		i++;
+	}
+	while (str[i] && ((str[i] >= '0') && str[i] <= '9'))
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
 	}
 	if (minus_count % 2 == 1)
-			res = ft_abs(res);
+		res = -res;
 	return (res);
-}
-
-int	ft_isspace(int _c)
-{
-	if (_c >= '\t' && _c <= '\r' || _c == ' ')
-		return (1);
-	else
-		return (0);
-}
-
-int	ft_abs(int nb)
-{
-	if (nb < 0)
-		return (nb * -1);
-	return (nb);
 }
