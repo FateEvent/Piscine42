@@ -1,17 +1,35 @@
-SRCS	= ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c 
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/25 16:43:22 by faventur          #+#    #+#              #
+#    Updated: 2021/11/25 17:22:51 by faventur         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJS	= ${SRCS:.c=.o}
+SRCS	= ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_swap.c
 
-cc		= cc
+OBJS	= $(addprefix srcs/, ${SRCS:.c=.o})
 
-C
+NAME	= libft.a
 
-all:	${OBJS}
-		cc -c ${OBJS}
+.c.o:
+		gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
 
+${NAME}:	${OBJS}
+			ar -rcs $@ $^
 
+all:		${NAME}
 
+clean:		
+			rm -f ${OBJS}
 
-		gcc -c ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
-ar -rc libft.a ft_putchar.o ft_swap.o ft_putstr.o ft_strlen.o ft_strcmp.o
-ranlib libft.a
+fclean:		clean
+			rm -f ${NAME}
+
+re:			fclean all
+
+.PHONY:		all clean fclean re
