@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 12:00:00 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/25 12:09:15 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/12 12:46:47 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/15 13:43:36 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n);
+void	ft_swap(int *a, int *b);
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+void	ft_swap(int *a, int *b)
 {
-	unsigned int	i;
+	int	temp;
 
-	i = 0;
-	if ((s2[i] == '\0' && s1[i] == '\0') || n == 0)
-		return (0);
-	n--;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (s1[i] - s2[i]);
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
+
+/* I assign to the var temp the value of the ptr a,
+ * I assign to the ptr a the value of the ptr b and
+ * I assign to the ptr b the value of the var temp */

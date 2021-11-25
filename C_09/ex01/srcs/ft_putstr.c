@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 12:00:00 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/25 12:09:15 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/14 18:59:21 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/14 18:59:27 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n);
+#include <unistd.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+
+void	ft_putstr(char *str)
 {
-	unsigned int	i;
-
-	i = 0;
-	if ((s2[i] == '\0' && s1[i] == '\0') || n == 0)
-		return (0);
-	n--;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	while (*str != '\0')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		ft_putchar(*str);
+		str++;
 	}
-	return (s1[i] - s2[i]);
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
