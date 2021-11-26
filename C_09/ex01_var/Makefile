@@ -6,7 +6,7 @@
 #    By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 14:21:29 by faventur          #+#    #+#              #
-#    Updated: 2021/11/26 14:23:07 by faventur         ###   ########.fr        #
+#    Updated: 2021/11/26 15:02:11 by faventur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ HEADER		= ./includes/
 FLAG		= -Wall -Wextra -Werror
 OPTION		= -c -I $(HEADER)
 SRC			= $(PATH_SRCS)ft_putchar.c $(PATH_SRCS)ft_putstr.c $(PATH_SRCS)ft_strlen.c $(PATH_SRCS)ft_swap.c
-OBJS			= ft_putchar.o ft_putstr.o ft_strlen.o ft_swap.o
+OBJS		= ft_putchar.o ft_putstr.o ft_strlen.o ft_swap.o
 
 all:		$(NAME)
 
