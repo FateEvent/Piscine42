@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_check_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 21:45:13 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/27 15:32:07 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/27 15:34:19 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/27 16:17:44 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str);
+# define MSG "Y a un probleme!"
+# include "ft.h"
 
-int	ft_atoi(char *str)
+void    ft_check_args(char *str);	//void ou error msg ( write(2, msg, ft_strlen(msg) + 1) ) ? 
+
+void    ft_check_args(char *str)
 {
-	int	i;
-	int	res;
-	int	minus_count;
+	int i;
+	int cyph_count;
 
 	i = 0;
-	res = 0;
-	while (str[i] && ((str[i] >= '0') && str[i] <= '9'))
+	while (str[i] != '\0')
 	{
-		res = res * 10 + str[i] - '0';
-		i++;
+		cyph_count++;
 	}
-	return (res);
+	if (cyph_count > 10)
+		ft_putstr(MSG);
+	if (cyph_count == 0)
+		ft_putstr(MSG);
 }

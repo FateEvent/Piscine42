@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 21:45:13 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/27 15:32:07 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/24 13:42:06 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/24 16:14:19 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str);
+#ifndef FT_H
+# define FT_H
+# include <unistd.h>
 
-int	ft_atoi(char *str)
-{
-	int	i;
-	int	res;
-	int	minus_count;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	i = 0;
-	res = 0;
-	while (str[i] && ((str[i] >= '0') && str[i] <= '9'))
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return (res);
-}
+#endif
