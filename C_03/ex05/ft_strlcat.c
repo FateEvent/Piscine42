@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:23:48 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/24 23:18:52 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/27 13:43:11 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_strlcat(char *dest, char *src, unsigned int size)
 		i++;
 		j++;
 	}
-	dest[j] = '\0';
+	dest[size - 1] = '\0';
 	if (src_len + size >= src_len + dest_len)
 		return (src_len + dest_len);
 	if (src_len + size < src_len + dest_len)
