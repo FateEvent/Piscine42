@@ -5,6 +5,6 @@ typedef struct Number
 {
 	char    *index;
 	char    *number;
-}   s_numb;
+}   s_nbr;
 
 #endif

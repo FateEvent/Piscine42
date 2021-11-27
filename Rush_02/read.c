@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 10:59:20 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/27 14:24:42 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/27 16:34:54 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-# define BUF_SIZE 500
+# define BUF_SIZE 100
 
 void	ft_putchar(char c)
 {
@@ -67,7 +67,7 @@ int main()
 	while (ret = read(fd, buf, BUF_SIZE))
 	{
 		buf[ret] = '\0';
-		ft_putnbr(ret);
+		//ft_putnbr(ret);
 		ft_putstr(buf);
 	}
 	ft_putnbr(ret);
