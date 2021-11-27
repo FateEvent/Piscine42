@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:12:12 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/23 16:06:13 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/27 22:10:04 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		strsize;
 
 	str = ft_strdup(strs[0]);
-	sep_len = strlen(sep);
+	sep_len = ft_strlen(sep);
 	index = 1;
 	strsize = ft_strlen(str);
 	while (index < size)
