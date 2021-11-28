@@ -6,13 +6,12 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:12:12 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/28 14:08:23 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/29 00:00:00 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src);
 char	*ft_strcpy(char *s1, char *s2);
 int		ft_strlen(char *str);
 char	*ft_strcat(char *dest, char *src);
@@ -21,35 +20,28 @@ char	*ft_strjoin(int size, char **strs, char *sep);
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*str;
-	int		sep_len;
 	int		index;
 	int		strsize;
 
-//	if (size <= 0)
-//	{
-//		str = malloc(sizeof(char) * 1);
-//		str[0] = '\0';
-//	}
-	str = ft_strdup(strs[0]);
-//	if (size == 1)
-//		return (str);
-	sep_len = ft_strlen(sep);
-	index = 1;
-	strsize = ft_strlen(str);
-	while (index < size)
+	if (size == 0)
 	{
-		strsize += ft_strlen(strs[index]);
-		index++;
+		str = malloc(sizeof(char) * 1);
+		str[0] = '\0';
+		return (str);
 	}
-	index = 1;
-	str[strsize] = (char)malloc ((strsize + (size - 1)
-				* sep_len + 1) * sizeof(char));
-	while (size > 1)
+	index = 0;
+	strsize = 0;
+	while (++index < size)
+		strsize += ft_strlen(strs[index]);
+	index = 0;
+	str = malloc ((sizeof(char) * strsize + (size * ft_strlen(sep)) + 1));
+	str = ft_strcpy(str, strs[index]);
+	if (size == 1)
+		return (str);
+	while (size-- > 1)
 	{
 		str = ft_strcat(str, sep);
-		str = ft_strcat(str, strs[index]);
-		size--;
-		index++;
+		str = ft_strcat(str, strs[++index]);
 	}
 	return (str);
 }
@@ -82,17 +74,6 @@ int	ft_strlen(char	*str)
 		str++;
 	}
 	return (counter);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dst;
-
-	dst = malloc (ft_strlen (src) + 1);
-	if (dst == NULL)
-		return (NULL);
-	ft_strcpy(dst, src);
-	return (dst);
 }
 
 char	*ft_strcpy(char *s1, char *s2)
