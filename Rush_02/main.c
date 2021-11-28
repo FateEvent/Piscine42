@@ -1,20 +1,36 @@
+//#include "imports.h"
+#include "models.h"
 #include <stdlib.h>
-#include <unistd.h>
 
-# include "./src/msg.h"
 
-void    ft_check_args(char *str);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
+char    *search_dict(dict *dictionary, char *find, int dictlen);
+void    clean_dict(dict *dictionary, int dictlen);
+int     create_dict(dict *dictionary, char *str, char *sep);
+int     open_file(char *filename);
+char    *read_file(int filedesc);
+
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
-	char	*filename = "numbers.dict";
+	char	*filename = "../numbers.dict";
+	dict *dictionary;
+	int dictlen;
 
-	if (argc == 2)
-		ft_check_args(argv[1]);
-	if (argc == 3)
-		ft_check_args(argv[2]);
-	if (argc == 1 || argc > 3)
-		ft_putstr(MSG);
+
+	dictionary = malloc(sizeof(*dictionary)* BUF_SIZE);
+	int filedesc = open_file(filename);
+	char *str = read_file(filedesc);
+	dictlen = create_dict(dictionary, str, "\n");
+	for (int i = 0; i < dictlen; i++)
+	{
+		printf("dict.key == %s\n", dictionary[i].key);
+		printf("dict.value == %s\n", dictionary[i].value);
+	}
+	clean_dict(dictionary, dictlen);
+//	char *found = search_dict(dictionary, argv[1], dictlen);
+//	printf("dictlen == %s \n", found);
+	
+	return (0);
+
 }
