@@ -6,21 +6,21 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 00:22:25 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/29 18:38:50 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/29 19:52:03 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_stock_str.h"
 
-char	*ft_strdup(char *src);
-char	*ft_strcpy(char *s1, char *s2);
-int		ft_strlen(char *str);
-struct  s_stock_str *ft_strs_to_tab(int ac, char **av);
+char				*ft_strdup(char *src);
+char				*ft_strcpy(char *s1, char *s2);
+int					ft_strlen(char *str);
+struct	s_stock_str	*ft_strs_to_tab(int ac, char **av);
 
-struct  s_stock_str *ft_strs_to_tab(int ac, char **av)
+struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	t_stock_str *tab;
+	t_stock_str	*tab;
 	int			index;
 	int			i;
 

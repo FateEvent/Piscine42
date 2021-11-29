@@ -6,17 +6,17 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:48:34 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/24 16:01:06 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/29 19:47:34 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_POINT_H
 # define FT_POINT_H
 
-typedef struct	s_point
+typedef struct s_point
 {
 	int	x;
 	int	y;
-} t_point;
- 
+}	t_point;
+
 #endif
