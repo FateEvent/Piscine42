@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 12:35:15 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/29 19:53:11 by faventur         ###   ########.fr       */
+/*   Updated: 2021/11/29 23:31:03 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	ft_show_tab(struct s_stock_str *par)
 	i = 0;
 	while (par[i].str != 0)
 	{
-		ft_putnbr(par[i].size);
-		ft_putchar('\n');
 		ft_putstr(par[i].str);
+		ft_putchar('\n');
+		ft_putnbr(par[i].size);
 		ft_putchar('\n');
 		ft_putstr(par[i].copy);
 		ft_putchar('\n');
