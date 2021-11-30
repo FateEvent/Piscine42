@@ -5,31 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/25 16:43:22 by faventur          #+#    #+#              #
-#    Updated: 2021/11/25 17:22:51 by faventur         ###   ########.fr        #
+#    Created: 2021/11/26 14:21:29 by faventur          #+#    #+#              #
+#    Updated: 2021/11/26 15:02:11 by faventur         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_swap.c
+NAME		= libft.a
+PATH_SRCS	= ./srcs/
+HEADER		= ./includes/
+FLAG		= -Wall -Wextra -Werror
+OPTION		= -c -I $(HEADER)
+SRC			= $(PATH_SRCS)ft_putchar.c $(PATH_SRCS)ft_putstr.c $(PATH_SRCS)ft_strlen.c $(PATH_SRCS)ft_swap.c
+OBJS		= ft_putchar.o ft_putstr.o ft_strlen.o ft_swap.o
 
-OBJS	= $(addprefix srcs/, ${SRCS:.c=.o})
+all:		$(NAME)
 
-NAME	= libft.a
+$(NAME):
+			gcc $(FLAG) $(OPTION) $(SRC)
+			ar rc $(NAME) $(OBJS)
 
-.c.o:
-		gcc -Wall -Wextra -Werror -c -I./includes $< -o ${<:.c=.o}
-
-${NAME}:	${OBJS}
-			ar -rcs $@ $^
-
-all:		${NAME}
-
-clean:		
-			rm -f ${OBJS}
+clean:
+			/bin/rm -f $(OBJS)
 
 fclean:		clean
-			rm -f ${NAME}
+			/bin/rm -f $(NAME)
 
 re:			fclean all
-
-.PHONY:		all clean fclean re
