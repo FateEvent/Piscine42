@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:09:17 by faventur          #+#    #+#             */
-/*   Updated: 2021/12/01 16:19:20 by faventur         ###   ########.fr       */
+/*   Updated: 2021/12/01 20:35:43 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	**ft_split(char *str, char *charset);
 int		word_counter(char *str, char *charset);
 int		ft_is_separator(char c, char *charset);
 void	word_writer(char *dest, char *from, char *charset);
-void	split_writer(char **split, char *str, char *charset);
+void	write_split(char **split, char *str, char *charset);
 
 char	**ft_split(char *str, char *charset)
 {
@@ -26,7 +26,7 @@ char	**ft_split(char *str, char *charset)
 	words = word_counter(str, charset);
 	res = (char **)malloc(sizeof(char *) * (words + 1));
 	res[words] = 0;
-	split_writer(res, str, charset);
+	write_split(res, str, charset);
 	return (res);
 }
 
@@ -63,7 +63,7 @@ int	ft_is_separator(char c, char *charset)
 	return (0);
 }
 
-void	split_writer(char **split, char *str, char *charset)
+void	write_split(char **split, char *str, char *charset)
 {
 	int		i;
 	int		j;

@@ -6,11 +6,9 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 20:03:41 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/15 13:47:29 by faventur         ###   ########.fr       */
+/*   Updated: 2021/12/01 19:28:39 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strlen(char	*str);
 
 int	ft_strlen(char	*str)
 {

@@ -6,11 +6,9 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:00:00 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/22 15:34:43 by faventur         ###   ########.fr       */
+/*   Updated: 2021/12/01 19:28:32 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strcmp(char *s1, char *s2);
 
 int	ft_strcmp(char *s1, char *s2)
 {

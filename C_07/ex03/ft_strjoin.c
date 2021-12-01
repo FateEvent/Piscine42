@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:12:12 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/29 00:00:00 by faventur         ###   ########.fr       */
+/*   Updated: 2021/12/01 18:55:51 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	while (++index < size)
 		strsize += ft_strlen(strs[index]);
 	index = 0;
-	str = malloc ((sizeof(char) * strsize + (size * ft_strlen(sep)) + 1));
+	str = malloc ((sizeof(char) * strsize + ((size - 1) * ft_strlen(sep)) + 1));
 	str = ft_strcpy(str, strs[index]);
 	if (size == 1)
 		return (str);
