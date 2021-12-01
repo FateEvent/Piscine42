@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_args.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 19:28:23 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/28 22:07:15 by faventur         ###   ########.fr       */
+/*   Created: 2021/11/27 15:34:19 by faventur          #+#    #+#             */
+/*   Updated: 2021/11/27 17:40:50 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/imports.h"
-
-int	main(int argc, char *argv[])
+int	ft_check_args(char *str)
 {
-	t_dict	*dictionary;
-	char	*filename;
-	char	*find;
-	char	*found;
+	int i;
+	int cyph_count;
 
-	filename = "srcs/numbers.dict";
-	dictionary = NULL;
-	find = NULL;
-	found = NULL;
-	if (ft_verif(argc, argv, find, filename) == 0)
+	i = 0;
+	while (str[i])
 	{
-		ft_putstr(DICT_MSG);
-		return (0);
+		if (str[i] >= '0' && str[i] <= '9')
+			cyph_count++;
+		if (str[i] < '0' && str[i] > '9')
+			return (0);
+		if (str[i] == '-' || str[i] == '.' || str[i] == ',')
+			return (0);
+		i++;
 	}
-	dict_opening(dictionary, filename, argv, found);
-	return (0);
+	if (cyph_count > 10 || cyph_count == 0)
+		return (0);
+	return (1);
 }

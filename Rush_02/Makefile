@@ -1,30 +1,28 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/26 14:21:29 by faventur          #+#    #+#              #
-#    Updated: 2021/11/28 21:22:12 by faventur         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = rush-2
+SRC_DIR = ./src/
+RM = /bin/rm -f
 
-NAME		= rush_02
-PATH_SRCS	= ./srcs/
-PATH_HEADER	= ./includes/
-FLAG		= -Wall -Wextra -Werror
-SRCS		= $(PATH_SRCS)dict_utils.c $(PATH_SRCS)file_utils.c $(PATH_SRCS)utils.c main.c $(PATH_SRCS)various.c
-OBJS		= ${SRCS:.c=.o}
+FUNCTS = main rush ftio memory
+OPTIONS = -I includes
+FLAGS = -Wall -Wextra -Werror
 
-$(NAME):		${OBJS}
-			gcc $(FLAG) -I${PATH_HEADER} ${SRCS} -o ${NAME}
+CFILES = $(patsubst %, $(SRC_DIR)%.c, $(FUNCTS))
+OBJECTS = $(patsubst %, %.o, $(FUNCTS))
 
-all:		
-			$(NAME)
+.PHONY: all $(NAME) $(OBJECTS) clean fclean re
+
+all: $(NAME)
+
+$(OBJECTS):
+	@gcc $(OPTIONS) $(FLAGS) -c $(CFILES)
+
+$(NAME): $(OBJECTS)
+	@gcc $(OPTIONS) $(FLAGS) $(OBJECTS) -o $(NAME)
 
 clean:
-			rm -f $(OBJS)
+	@$(RM) $(OBJECTS)
 
-fclean:		clean
-			rm -f $(NAME)
+fclean: clean
+	@$(RM) $(NAME)
+
+re: fclean all

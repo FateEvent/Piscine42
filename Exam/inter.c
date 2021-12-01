@@ -1,66 +1,42 @@
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int	check_doubles(char *str, char c, int pos)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-int	ft_check(char *str, char c, int i)
-{
-	int	j;
-
-	j = 0;
-	while(j < i)
+	i = 0;
+	while (i < pos)
 	{
-		if (str[j] == c)
+		if (str[i] == c)
 			return (0);
-		++j;
+		i++;
 	}
 	return (1);
 }
 
-void	ft_iter(char *s1, char *s2)
+int	main(int argc, char *argv[])
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (s1[i])
+	while (argv[1][i] != '\0')
 	{
-		if (ft_check(s1, s1[i], i) == 1)
+		j = 0;
+		while (argv[2][j] != '\0')
 		{
-			j = 0;
-			while (s2[j])
+			if (argv[1][i] == argv[2][j])
 			{
-				if (s2[j] == s1[i])
+				if (check_doubles(argv[1], argv[1][i], i))
 				{
-					write(1, &s1[i], 1);
-					break;
+					write(1, &argv[1][i], 1);
+					break ;
 				}
-				++j;
 			}
+			j++;
 		}
-		++i;
+		i++;
 	}
-}
-
-int	main(int ac, char **av)
-{
-	if (ac == 3)
-		ft_iter(av[1], av[2]);
 	write(1, "\n", 1);
 	return (0);
 }
-
-// "1231"
-// //tab[10] = {0, 1, 1, 1, 0, 0, 0, 0, 0, 0};
-// char tab[256];
-// while (i < 256)
-// 	tab[i] = 0;
-
-// c = argv[1][i];
-// if (tab[c] == 0)
-// {
-// 	ft_putchar(c);
-// 	tab[c] = 1;
-// }

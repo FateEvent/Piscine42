@@ -1,16 +1,5 @@
-//#include "imports.h"
 #include <stdlib.h>
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	while (*s1 && *s1 == *s2)
-	{
-		s2++;
-		s1++;
-	}
-	return (*s1 - *s2);
-}
-
+#include "models.h"
 
 int		is_separator(char *str, char *charset)
 {
@@ -60,7 +49,7 @@ char	*wordcpy(char *src, int n)
 	return (dest);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**split(char *str, char *charset)
 {
 	char	**t;
 	int		size;
@@ -83,3 +72,39 @@ char	**ft_split(char *str, char *charset)
 	t[size] = 0;
 	return (t);
 }
+
+/*#include <stdio.h>
+int main(void)
+{
+    char *str = "0: zero\n1: one\n2: two";
+    char *sep = "\n";
+    char **tab = split(str, sep);
+    char **tmptab;
+    dict *dictionary;
+    int dictlen;
+    int j;
+
+    dictionary = malloc(sizeof(*dictionary));
+    j = -1;
+    dictlen = 0;
+    while (tab[++j])
+    {
+        tmptab = split(tab[j], ": ");
+        dictionary[dictlen].key = tmptab[0];
+        dictionary[dictlen].value = tmptab[1];
+        dictlen++;
+    }
+
+
+    char *arg = "1";
+
+    for (int i = 0; i < dictlen; i++)
+    {
+        if (ft_strcmp(dictionary[i].key, arg) == 0)
+        {
+            printf("dict -> key   == %s\n", dictionary[i].key);
+            printf("dict -> value == %s\n", dictionary[i].value);
+        }
+    }
+    
+}*/

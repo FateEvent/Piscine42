@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt_var.c                                      :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 18:03:55 by faventur          #+#    #+#             */
-/*   Updated: 2021/11/21 18:08:33 by faventur         ###   ########.fr       */
+/*   Created: 2021/12/01 11:44:51 by faventur          #+#    #+#             */
+/*   Updated: 2021/12/01 11:46:12 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-double	ft_sqrt(double nb);
+int	*ft_map(int *tab, int length, int (*f)(int));
 
-double	ft_sqrt(double nb)
+int *ft_map(int *tab, int length, int (*f)(int))
 {
-	double	error;
-	double	s;
+	int	i;
 
-	error = 0.00001;
-	s = nb;
-	while ((s - nb / s) > error)
+	i = 0;
+	while (i < length)
 	{
-		s = (s + nb / s) / 2;
+		f(tab[i]);
+		i++;
 	}
-	return (s);
 }
