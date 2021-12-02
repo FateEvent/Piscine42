@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 11:44:51 by faventur          #+#    #+#             */
-/*   Updated: 2021/12/02 18:07:31 by faventur         ###   ########.fr       */
+/*   Created: 2021/12/02 17:59:51 by faventur          #+#    #+#             */
+/*   Updated: 2021/12/02 17:59:54 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+int ft_is_sort(int *tab, int length, int (*f)(int, int));
 
-int	*ft_map(int *tab, int length, int (*f)(int));
-
-int *ft_map(int *tab, int length, int (*f)(int))
+int ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
 	int	i;
-	int	*arr;
 
 	i = 0;
-	arr = malloc(sizeof(int) * length);
-	while (tab[i] && i < length)
-	{
-		arr[i] = (*f)(tab[i]);
+	while (tab[i] && f(tab[i], tab[i + 1]) == 0)
 		i++;
+	if (tab[i] && f(tab[i], tab[i + 1]) > 0)
+	{
+		while (++i < length - 1)
+			if (f(tab[i], tab[i + 1]) < 0)
+				return (0);
 	}
-	return (arr);
+	if (tab[i] && f(tab[i], tab[i + 1]) < 0)
+	{
+		while (++i < length - 1)
+			if (f(tab[i], tab[i + 1]) > 0)
+				return (0);
+	}
+	return (1);
 }

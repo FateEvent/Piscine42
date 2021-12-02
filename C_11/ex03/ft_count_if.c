@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 11:44:51 by faventur          #+#    #+#             */
-/*   Updated: 2021/12/02 18:07:31 by faventur         ###   ########.fr       */
+/*   Created: 2021/12/02 18:09:00 by faventur          #+#    #+#             */
+/*   Updated: 2021/12/02 18:09:15 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+int ft_count_if(char **tab, int length, int (*f)(char*));
 
-int	*ft_map(int *tab, int length, int (*f)(int));
-
-int *ft_map(int *tab, int length, int (*f)(int))
+int ft_count_if(char **tab, int length, int (*f)(char*))
 {
 	int	i;
-	int	*arr;
+    int counter;
 
 	i = 0;
-	arr = malloc(sizeof(int) * length);
+    counter = 0;
 	while (tab[i] && i < length)
 	{
-		arr[i] = (*f)(tab[i]);
+		if (f(tab[i]))
+			counter++;
 		i++;
 	}
-	return (arr);
+	return (counter);
 }
