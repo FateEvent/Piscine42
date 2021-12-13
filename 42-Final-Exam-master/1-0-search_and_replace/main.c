@@ -6,11 +6,11 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 08:42:18 by faventur          #+#    #+#             */
-/*   Updated: 2021/12/10 14:31:33 by faventur         ###   ########.fr       */
+/*   Updated: 2021/12/13 11:22:25 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
