@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 08:42:18 by faventur          #+#    #+#             */
-/*   Updated: 2021/12/13 11:28:05 by faventur         ###   ########.fr       */
+/*   Updated: 2021/12/14 10:30:20 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,21 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ft_check_len(char *s)
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	counter;
 
 	i = 0;
+	while (str[i])
+		ft_putchar(str[i++]);
+}
+
+int	ft_check_len(char *s)
+{
+	int	counter;
+
 	counter = 0;
-	while (s[i] != '\0')
+	while (s[counter] != '\0')
 	{
 		counter++;
 	}
@@ -57,35 +64,24 @@ int main(int argc, char *argv[])
 	i = 0;
 	if (argc == 4)
 	{
-		if (ft_check_params(argv[2], argv[3]) && ft_check_len(argv[4]))
+		if (ft_check_params(argv[1], argv[2]) && ft_check_len(argv[3]))
 		{
-			while (argv[2][i] != '\0')
+			while (argv[1][i] != '\0')
 			{
-				if (argv[2][i] == argv[3][0])
-					ft_putchar(argv[4][0]);
+				if (argv[1][i] == argv[2][0])
+					ft_putchar(argv[3][0]);
 				else
-					ft_putchar(argv[2][i]);
+					ft_putchar(argv[1][i]);
 				i++;
 			}
 		}
 		else
-			ft_putstr(argv[2]);
+		{
+			ft_putstr(argv[1]);
 			ft_putchar('\n');
-			
 		}
 	}
 	else
 		ft_putchar('\n');
-	
-					}
-					j++;
-			}
-			i++;
-		}
-	}
-	else
-		return (0);
+	return (0);
 }
-
-exit( EXIT_SUCCESS );
-
