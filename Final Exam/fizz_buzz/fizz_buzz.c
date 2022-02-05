@@ -35,7 +35,7 @@ int main()
 	i = 1;
 	while (i <= 100)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
+		if (i % 15 == 0)
 			write(1, "fizz buzz", 9);
 		else if (i % 3 == 0)
 			write(1, "fizz", 4);
