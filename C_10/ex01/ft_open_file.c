@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_open_file.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 19:48:55 by faventur          #+#    #+#             */
-/*   Updated: 2022/02/13 19:48:55 by faventur         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 # include "ft.h"
 
 void	open_and_read(char *buffer, int argc, char *argv[])
@@ -20,9 +8,9 @@ void	open_and_read(char *buffer, int argc, char *argv[])
 	int		i;
 	int		j;
 
-	i = 0;
+	i = 1;
 	j = 0;
-	while (i++ < argc && !operand_checker(argv[i]))
+	while (i < argc && !operand_checker(argv[i]))
 	{
 		fd = open(argv[i], O_RDONLY);
 		if (fd == -1)
@@ -37,6 +25,7 @@ void	open_and_read(char *buffer, int argc, char *argv[])
 			while (buffer[j] != '\0')
 				j++;
 		}
+		i++;
 	}
 }
 
@@ -72,7 +61,7 @@ void	open_and_append(char *buffer, int argc, char *argv[], int i)
 	int		fd;
 	int		added_bytes;
 
-	fd = open(argv[i + 1], O_RDWR | O_APPEND);
+	fd = open(argv[i + 1], O_WRONLY | O_CREAT | O_APPEND);
 	if (fd == -1)
 		return ;
 	added_bytes = write(fd, buffer, ft_strlen(buffer));
