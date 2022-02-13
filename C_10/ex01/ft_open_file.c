@@ -14,10 +14,7 @@ void	open_and_read(char *buffer, int argc, char *argv[])
 	{
 		fd = open(argv[i], O_RDONLY);
 		if (fd == -1)
-		{
 			print_enoent(argv[i]);
-			continue ;
-		}
 		else
 		{
 			bytes_read = read(fd, &buffer[j], MAX_SIZE - j);
