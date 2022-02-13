@@ -39,6 +39,7 @@ void	print_enoent(char *pathname)
 
 void	open_and_write(char *buffer, int argc, char *argv[], int i)
 {
+	(void)	argc;
 	(void)	argv;
 	int		fd;
 	int		bytes_written;
@@ -54,6 +55,7 @@ void	open_and_write(char *buffer, int argc, char *argv[], int i)
 
 void	open_and_append(char *buffer, int argc, char *argv[], int i)
 {
+	(void)	argc;
 	(void)	argv;
 	int		fd;
 	int		added_bytes;
