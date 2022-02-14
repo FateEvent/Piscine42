@@ -1,4 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_open_file.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/14 17:18:01 by faventur          #+#    #+#             */
+/*   Updated: 2022/02/14 17:18:01 by faventur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "ft.h"
+
+void	disp_stdin(void)
+{
+	char	buffer;
+
+	while (read(0, &buffer, 1) != 0)
+		write(1, &buffer, 1);
+}
 
 void	open_and_read(char *buffer, int argc, char *argv[])
 {
@@ -31,11 +51,11 @@ void	open_and_read(char *buffer, int argc, char *argv[])
 
 void	print_enoent(char *pathname)
 {
-	ft_putstr("cat: ");
-	ft_putstr(basename(pathname));
-	ft_putstr(": ");
-	ft_putstr(strerror(ENOENT));
-	ft_putchar('\n');
+	ft_err_putstr("ft_cat: ");
+	ft_err_putstr(pathname);
+	ft_err_putstr(": ");
+	ft_err_putstr(strerror(ENOENT));
+	ft_err_putchar('\n');
 }
 
 void	open_and_write(char *buffer, int argc, char *argv[], int i)

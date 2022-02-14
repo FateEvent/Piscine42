@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/14 17:17:40 by faventur          #+#    #+#             */
+/*   Updated: 2022/02/14 17:17:40 by faventur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "ft.h"
 
 int	operand_checker(char *argument)
@@ -25,19 +37,19 @@ size_t	ft_strlen(const char *str)
 	return (counter);
 }
 
-void	ft_putstr(char *str)
+void	ft_err_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		ft_putchar(str[i]);
+		ft_err_putchar(str[i]);
 		i++;
 	}
 }
 
-void	ft_putchar(char c)
+void	ft_err_putchar(char c)
 {
-	write(1, &c, 1);
+	write(2, &c, 1);
 }

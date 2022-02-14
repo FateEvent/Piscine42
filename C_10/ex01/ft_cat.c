@@ -19,6 +19,8 @@ int	main(int argc, char *argv[])
 	char	buffer[MAX_SIZE];
 
 	i = 0;
+	if (argc < 2 || argv[1][0] == '-')
+		disp_stdin();
 	open_and_read(buffer, argc, argv);
 	while (i++ < argc)
 	{
@@ -33,6 +35,6 @@ int	main(int argc, char *argv[])
 			return (0);
 		}
 	}
-	ft_putstr(buffer);
+	write(1, &buffer, ft_strlen(buffer));
 	return (0);
 }
