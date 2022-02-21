@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 11:44:51 by faventur          #+#    #+#             */
-/*   Updated: 2021/12/02 18:07:31 by faventur         ###   ########.fr       */
+/*   Updated: 2022/02/21 15:34:26 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	*ft_map(int *tab, int length, int (*f)(int));
 
-int *ft_map(int *tab, int length, int (*f)(int))
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
 	int	i;
 	int	*arr;
