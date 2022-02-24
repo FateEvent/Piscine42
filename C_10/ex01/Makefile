@@ -1,17 +1,22 @@
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
+
+RM		= rm -f
+
 NAME	= ft_cat
 
 SRCS	= ft_cat.c ft_open_file.c ft.c
 
-all:	$(NAME)
+OBJS	= ${SRCS:.c=.o}
 
-$(NAME):
-		gcc -c -Wall -Werror -Wextra $(SRCS)
-		gcc -o $(NAME) ft_cat.o ft_open_file.o ft.o ft.h
+all:		$(NAME)
+
+${NAME}:	${OBJS}
 
 clean:
-		rm -f ft_cat.o ft_open_file.o ft.o
+			${RM} ${OBJS}
 
-fclean:	clean
-		rm -f $(NAME)
+fclean:		clean
+			${RM} $(NAME)
 
-re:		fclean all
+re:			fclean all
