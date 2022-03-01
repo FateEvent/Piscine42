@@ -6,11 +6,11 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:18:01 by faventur          #+#    #+#             */
-/*   Updated: 2022/02/14 17:18:01 by faventur         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:14:22 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft.h"
+#include "ft.h"
 
 void	disp_stdin(void)
 {
@@ -22,14 +22,14 @@ void	disp_stdin(void)
 
 void	open_and_read(char *buffer, int argc, char *argv[])
 {
-	(void)	argv;
-	int		fd;
-	int		bytes_read;
-	int		i;
-	int		j;
+	int	fd;
+	int	bytes_read;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 0;
+	(void) argv;
 	while (i < argc && !operand_checker(argv[i]))
 	{
 		fd = open(argv[i], O_RDONLY);
@@ -60,11 +60,11 @@ void	print_enoent(char *pathname)
 
 void	open_and_write(char *buffer, int argc, char *argv[], int i)
 {
-	(void)	argc;
-	(void)	argv;
-	int		fd;
-	int		bytes_written;
+	int	fd;
+	int	bytes_written;
 
+	(void) argc;
+	(void) argv;
 	fd = open(argv[i + 1], O_WRONLY | O_CREAT);
 	if (fd == -1)
 		return ;
@@ -76,11 +76,11 @@ void	open_and_write(char *buffer, int argc, char *argv[], int i)
 
 void	open_and_append(char *buffer, int argc, char *argv[], int i)
 {
-	(void)	argc;
-	(void)	argv;
-	int		fd;
-	int		added_bytes;
+	int	fd;
+	int	added_bytes;
 
+	(void) argc;
+	(void) argv;
 	fd = open(argv[i + 1], O_WRONLY | O_CREAT | O_APPEND);
 	if (fd == -1)
 		return ;

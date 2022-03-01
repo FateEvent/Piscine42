@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 21:43:57 by faventur          #+#    #+#             */
-/*   Updated: 2022/02/06 21:43:57 by faventur         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:12:02 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-# define MAX_SIZE 5000
+#define MAX_SIZE 5000
 
 int		ft_args_checker(int argc, char *argv[]);
 void	ft_err_putstr(char *str);
@@ -22,12 +22,12 @@ void	ft_err_putchar(char c);
 
 int	main(int argc, char *argv[])
 {
-	(void)	argv;
 	int		check_args;
 	int		fd;
 	int		bytes_read;
 	char	buffer[MAX_SIZE];
 
+	(void) argv;
 	check_args = ft_args_checker(argc, argv);
 	if (check_args)
 		return (1);
@@ -44,10 +44,9 @@ int	main(int argc, char *argv[])
 	return (0);
 }
 
-int ft_args_checker(int argc, char *argv[])
+int	ft_args_checker(int argc, char *argv[])
 {
-	(void)	argv;
-
+	(void) argv;
 	if (argc == 1)
 	{
 		ft_err_putstr("File name missing.\n");
