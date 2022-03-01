@@ -1,0 +1,5 @@
+Credentials cache: API:7A1BFCE2-BCC2-4520-90AA-0FADF3BF2622
+        Principal: faventur@42MULHOUSE.FR
+
+  Issued                Expires               Principal
+Nov 11 11:31:00 2021  Nov 11 21:31:00 2021  krbtgt/42MULHOUSE.FR@42MULHOUSE.FR
