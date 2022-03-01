@@ -6,13 +6,13 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:59:51 by faventur          #+#    #+#             */
-/*   Updated: 2021/12/02 17:59:54 by faventur         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:17:56 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_is_sort(int *tab, int length, int (*f)(int, int));
+int	ft_is_sort(int *tab, int length, int (*f)(int, int));
 
-int ft_is_sort(int *tab, int length, int (*f)(int, int))
+int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
 	int	i;
 
