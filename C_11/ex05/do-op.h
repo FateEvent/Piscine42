@@ -1,16 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   do-op.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 15:25:54 by faventur          #+#    #+#             */
-/*   Updated: 2022/02/07 14:18:08 by faventur         ###   ########.fr       */
+/*   Created: 2022/04/06 15:46:47 by faventur          #+#    #+#             */
+/*   Updated: 2022/04/06 18:23:48 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#ifndef DO_OP_H
+# define DO_OP_H
+
+# include <unistd.h>
+
+void	ft_sum(int a, int b);
+void	ft_subtraction(int a, int b);
+void	ft_multiplication(int a, int b);
+void	ft_division(int a, int b);
+void	ft_modulo(int a, int b);
+
+int	    ft_check_num(char *c);
+int	    ft_check_op(char *c);
+
+int     ft_atoi(const char *nptr);
+void	ft_putnbr(int nb);
+void	ft_putstr(char const *str);
+void	ft_putchar(char c);
+
+#endif
