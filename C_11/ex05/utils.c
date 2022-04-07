@@ -6,11 +6,11 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 15:45:31 by faventur          #+#    #+#             */
-/*   Updated: 2022/04/06 15:55:34 by faventur         ###   ########.fr       */
+/*   Updated: 2022/04/07 09:38:04 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "do-op.h"
+#include "do_op.h"
 
 static int	ft_isspace(int c)
 {
