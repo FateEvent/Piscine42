@@ -53,6 +53,7 @@ dkms.conf
 
 # mundane
 *.swp
+.vscode
 .DS_STORE
 
 # executables
