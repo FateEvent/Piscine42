@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 15:05:14 by faventur          #+#    #+#             */
-/*   Updated: 2022/05/02 15:12:46 by faventur         ###   ########.fr       */
+/*   Updated: 2022/05/03 00:04:59 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ typedef struct s_btree {
 }					t_btree;
 
 t_btree	*btree_create_node(void *item);
-void	btree_apply_prefix(t_btree *root, void (*applyf)(void *));
-void	btree_apply_infix(t_btree *root, void (*applyf)(void *));
 void	btree_apply_suffix(t_btree *root, void (*applyf)(void *));
 
 #endif
