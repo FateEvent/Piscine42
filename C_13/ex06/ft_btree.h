@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 15:05:14 by faventur          #+#    #+#             */
-/*   Updated: 2022/05/03 18:33:52 by faventur         ###   ########.fr       */
+/*   Updated: 2022/05/03 18:35:18 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,9 @@ t_btree	*btree_create_node(void *item);
 void	btree_apply_prefix(t_btree *root, void (*applyf)(void *));
 void	btree_apply_infix(t_btree *root, void (*applyf)(void *));
 void	btree_apply_suffix(t_btree *root, void (*applyf)(void *));
+void	btree_insert_data(t_btree **root, void *item, int (*cmpf)
+			(void *, void *));
+
+int		btree_level_count(t_btree *root);
 
 #endif
