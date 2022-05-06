@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_BACK.c                                :+:      :+:    :+:   */
+/*   ft_list_reverse.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 16:50:17 by faventur          #+#    #+#             */
-/*   Updated: 2022/05/06 19:14:57 by faventur         ###   ########.fr       */
+/*   Updated: 2022/05/06 21:57:59 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_push_back(t_list **begin_list, void *data)
+void	ft_list_reverse(t_list **begin_list)
 {
+	t_list	*prev;
 	t_list	*current;
-	t_list	*new;
+	t_list	*next;
 
-	new = ft_create_elem(data);
+	prev = NULL;
 	current = *begin_list;
-	while (current->next)
-		current = current->next;
-	current->next = new;
+	next = NULL;
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	*begin_list = prev;
 }
