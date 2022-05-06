@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   ft_list_last.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/01 15:15:43 by faventur          #+#    #+#             */
-/*   Updated: 2022/05/06 17:05:56 by faventur         ###   ########.fr       */
+/*   Created: 2022/05/06 16:50:17 by faventur          #+#    #+#             */
+/*   Updated: 2022/05/06 17:24:57 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_create_elem(void *data)
+t_list	*ft_list_last(t_list *begin_list)
 {
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(*new));
-	if (new)
-	{
-		new->data = data;
-		new->next = NULL;
+	if (begin_list)
+	{	
+		while (begin_list->next)
+			begin_list = begin_list->next;
 	}
-	return (new);
+	return (begin_list);
 }
