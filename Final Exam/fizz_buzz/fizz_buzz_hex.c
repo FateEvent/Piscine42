@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fizz_buzz.c                                        :+:      :+:    :+:   */
+/*   fizz_buzz_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 16:48:17 by faventur          #+#    #+#             */
-/*   Updated: 2022/05/06 23:59:05 by faventur         ###   ########.fr       */
+/*   Created: 2022/05/06 23:58:55 by faventur          #+#    #+#             */
+/*   Updated: 2022/05/07 00:06:58 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 void	ft_putchar(char c)
 {
@@ -19,16 +20,52 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int n)
 {
-	if (n >= 10)
+	int		i;
+	int		j;
+	int		k;
+	int		tot;
+	char	*str;
+
+	j = n;
+	k = 0;
+	while (j)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		j /= 16;
+		k++;
 	}
-	else
-		ft_putchar(n + '0');
+	str = malloc(sizeof(char) * (k + 1));
+	i = 0;
+	while (n)
+	{
+		tot = n % 16;
+		if (tot <= 9)
+			str[i] = tot + '0';
+		else if (tot == 10)
+			str[i] = 'a';
+		else if (tot == 11)
+			str[i] = 'b';
+		else if (tot == 12)
+			str[i] = 'c';
+		else if (tot == 13)
+			str[i] = 'd';
+		else if (tot == 14)
+			str[i] = 'e';
+		else if (tot == 15)
+			str[i] = 'f';
+		n /= 16;
+		i++;
+	}
+	str[i] = '\0';
+	i--;
+	while (i >= 0)
+	{
+		ft_putchar(str[i]);
+		i--;
+	}
+	free(str);
 }
 
-int	main()
+int main()
 {
 	int i;
 
