@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 15:05:14 by faventur          #+#    #+#             */
-/*   Updated: 2022/05/06 22:35:23 by faventur         ###   ########.fr       */
+/*   Updated: 2022/05/07 15:32:05 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ t_list	*ft_list_find(t_list *begin_list, void *data_ref, int (*cmp)());
 void	ft_list_remove_if(t_list **begin_list, void *data_ref,
 			int (*cmp)(), void (*free_fct)(void *));
 void	ft_list_merge(t_list **begin_list1, t_list *begin_list2);
+void	ft_list_sort(t_list **begin_list, int (*cmp)());
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 23:59:49 by faventur          #+#    #+#             */
-/*   Updated: 2022/05/07 00:06:54 by faventur         ###   ########.fr       */
+/*   Updated: 2022/05/07 15:28:11 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	ft_putnbr(int n)
 		k++;
 	}
 	str = malloc(sizeof(char) * (k + 1));
-
 	i = 0;
 	while (n)
 	{
