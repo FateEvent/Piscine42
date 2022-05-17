@@ -6,12 +6,57 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:23:18 by faventur          #+#    #+#             */
-/*   Updated: 2022/05/07 15:25:42 by faventur         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:56:49 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
 #include <stdio.h>
+
+t_btree	*btree_create_node(void *item)
+{
+	t_btree	*new;
+
+	new = (t_btree *)malloc(sizeof(*new));
+	if (new)
+	{
+		new->item = item;
+		new->left = NULL;
+		new->right = NULL;
+	}
+	return (new);
+}
+
+void	btree_insert_data(t_btree **root, void *item, int (*cmpf)
+			(void *, void *))
+{
+	t_btree	*new;
+
+	new = btree_create_node(item);
+	if (root)
+	{
+		if (*root)
+		{
+			if (cmpf(item, (*root)->item) < 0)
+			{
+				if ((*root)->left)
+					btree_insert_data(&(*root)->left, item, cmpf);
+				else
+					(*root)->left = new;
+			}
+			else
+			{
+				if ((*root)->right)
+					btree_insert_data(&(*root)->right, item, cmpf);
+				else
+					(*root)->right = new;
+			}
+		}
+		else
+			*root = new;
+	}
+}
+
 /*
 int	apply_recursively(t_btree *root, void (*applyf) (void *item,
 		int current_level, int is_first_elem))
@@ -53,6 +98,7 @@ int	print_level(t_btree *root, int level, int is_first_elem)
 	int			left;
 	int			right;
 	static int	i;
+	static int	j;
 
 	printf("lvl %d\n", level);
 	if (root == NULL)
@@ -61,10 +107,16 @@ int	print_level(t_btree *root, int level, int is_first_elem)
 	}
 	if (level == 0 && is_first_elem)
 	{
+		if (j == 0)
+		{
 			printf("%d\n", *(int *)root->item);
-			exit(1);
+			j++;
+			return (1);
+		}
+		else
+			return (1);
 	}
-	if (level == 0 && !is_first_elem)
+	else if (level == 0 && !is_first_elem)
 	{
 		if (i == 0)
 		{
@@ -85,7 +137,7 @@ void	level_order_traversal(t_btree *root)
 	int	is_first_elem;
 
 	level = 2;
-	is_first_elem = 0;
+	is_first_elem = 1;
 	// run till print_level() returns false
 	print_level(root, level, is_first_elem);
 }
